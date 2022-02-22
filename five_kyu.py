@@ -1,3 +1,6 @@
+from xml import dom
+
+
 class Codewars:
   def __init__(self):
     print("Welcome to Codewars 5kyu file")
@@ -26,5 +29,16 @@ class Codewars:
       if hour < 10:
         hour = "0"+str(hour)
       return str("{}:{}:{}".format(hour, minute, second))
+
+  def domain_name(self, url):
+    """
+    url: url of a website to split from "/" and "."
+    return: domain name from the url
+    """
+    domain_list = ([elt.split(".") for elt in url.split("/")])
+    for elt in domain_list:
+      name = ([elt[i] for i in range(len(elt)) if elt[i] != "www" and elt[i] != "http:" and elt[i] != "https:" and elt[i] != ""])
+      if name != []:
+        return name[0]
 
 code = Codewars()
