@@ -65,4 +65,3 @@ class Codewars:
     return "".join(s_characters)
 
 code = Codewars()
-print(code.break_camel_case("heyCunt"))
