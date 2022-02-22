@@ -1,6 +1,6 @@
 class Codewars:
   def __init__(self):
-    print("Welcome to Codewars 7kyu file")
+    print("Welcome to Codewars 6kyu file")
 
   def find_outlier(self, integers):
     """
@@ -56,4 +56,13 @@ class Codewars:
         n = n - roman_steps_list[i]*(n//roman_steps_list[i])
     return "".join(roman_numerals)
 
+  def break_camel_case(self, s):
+    s_characters = ([char for char in str(s)])
+    for i in range(len(s_characters) - 1):
+      if s_characters[i+1] == s_characters[i+1].upper():
+        s_characters[i] = s_characters[i] + " "
+    
+    return "".join(s_characters)
+
 code = Codewars()
+print(code.break_camel_case("heyCunt"))

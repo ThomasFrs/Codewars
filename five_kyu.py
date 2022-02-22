@@ -1,6 +1,6 @@
 class Codewars:
   def __init__(self):
-    print("Welcome to Codewars 7kyu file")
+    print("Welcome to Codewars 5kyu file")
     
   def make_readable(self, seconds):
     """
