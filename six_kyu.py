@@ -57,11 +57,22 @@ class Codewars:
     return "".join(roman_numerals)
 
   def break_camel_case(self, s):
+    """
+    s: string of characters written in camel case
+    return: s split between uppercase
+    """
     s_characters = ([char for char in str(s)])
     for i in range(len(s_characters) - 1):
       if s_characters[i+1] == s_characters[i+1].upper():
-        s_characters[i] = s_characters[i] + " "
-    
+        s_characters[i] = s_characters[i] + " " 
     return "".join(s_characters)
+
+  def tower_build(self, n_floors=1):
+    """
+    n_floors: number of floors for the tower
+    return: tower consisting of "*" from top to bottom layed out as a pyramid
+    """
+    tower_list = ([" "*(n_floors-i) + "*"*(2*i-1) + " "*(n_floors-i) for i in range(1, n_floors+1)])
+    return tower_list
 
 code = Codewars()
