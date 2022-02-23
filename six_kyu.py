@@ -86,5 +86,19 @@ class Codewars:
     """
     return ([elt for elt in a if elt not in b])
 
+  def find_missing_letter(self, chars):
+    """
+    chars: string of characters
+    return: missing letter between chars or after
+    """
+    letters = [char for char in chars][0]
+    chars = [char.lower() for char in chars]
+    alphabet = [char for char in "abcdefghijklmnopqrstuvwxyz"]
+    starting_index = alphabet.index(chars[0])
+    for letter in alphabet[starting_index:]:
+      if letter not in chars and chars[0].lower() == letters[0]:
+        return letter
+      if letter not in chars and chars[0].upper() == letters[0]:
+        return letter.upper()
+
 code = Codewars()
-print(code.array_diff([1,2,1, 5],[1, 2, 3]))
