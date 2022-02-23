@@ -1,5 +1,4 @@
-from xml import dom
-
+import re
 
 class Codewars:
   def __init__(self):
@@ -40,5 +39,17 @@ class Codewars:
       name = ([elt[i] for i in range(len(elt)) if elt[i] != "www" and elt[i] != "http:" and elt[i] != "https:" and elt[i] != ""])
       if name != []:
         return name[0]
+
+  def regex_password_validation(self):
+    """
+    ^              # begin word
+    (?=.*[a-z])   # at least one lowercase letter
+    (?=.*[A-Z])   # at least one uppercase letter
+    (?=.*\d)   # at least one number
+    [A-Za-z\d]     # only alphanumeric
+    {6,}           # at least 6 characters long
+    $              # end word
+    """
+    regex = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{6,}$"
 
 code = Codewars()
