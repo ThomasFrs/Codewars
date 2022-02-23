@@ -1,5 +1,7 @@
 import re
 
+from sympy import numer
+
 class Codewars:
   def __init__(self):
     print("Welcome to Codewars 5kyu file")

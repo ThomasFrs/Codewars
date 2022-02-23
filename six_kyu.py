@@ -1,3 +1,6 @@
+from array import ArrayType, array
+
+
 class Codewars:
   def __init__(self):
     print("Welcome to Codewars 6kyu file")
@@ -75,4 +78,13 @@ class Codewars:
     tower_list = ([" "*(n_floors-i) + "*"*(2*i-1) + " "*(n_floors-i) for i in range(1, n_floors+1)])
     return tower_list
 
+  def array_diff(self, a, b):
+    """
+    a: array of integers
+    b: array of integers to substract to a
+    return: the substract of a elements that are present in b
+    """
+    return ([elt for elt in a if elt not in b])
+
 code = Codewars()
+print(code.array_diff([1,2,1, 5],[1, 2, 3]))
