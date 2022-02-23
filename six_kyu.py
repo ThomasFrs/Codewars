@@ -1,6 +1,3 @@
-from array import ArrayType, array
-
-
 class Codewars:
   def __init__(self):
     print("Welcome to Codewars 6kyu file")

@@ -1,7 +1,5 @@
 import re
 
-from sympy import numer
-
 class Codewars:
   def __init__(self):
     print("Welcome to Codewars 5kyu file")
@@ -53,5 +51,23 @@ class Codewars:
     $              # end word
     """
     regex = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{6,}$"
+
+  def rgb(self, *args):
+    """
+    args: r, g, b as decimals
+    return: r, g, b values converted into hexidecimals
+    """
+    hex_list = []
+    for elt in args:
+      if elt < 0:
+        elt = "00"
+      elif elt > 255:
+        elt = "FF"
+      elif elt < 10:
+        elt = "0" + (hex(elt).split("0x"))[1]
+      else:
+        elt = (hex(elt).split("0x"))[1]
+      hex_list.append(elt.upper())
+    return "".join(hex_list)
 
 code = Codewars()
